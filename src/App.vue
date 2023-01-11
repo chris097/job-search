@@ -1,5 +1,4 @@
 <template>
-  <div class="text-blue-600 mt-2"> Hello world</div>
   <MainNav />
 </template>
 
