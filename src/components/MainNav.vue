@@ -10,14 +10,21 @@
                         </li>
                     </ul>
                 </nav>
+                <div class="ml-auto flex items-center h-full py-2.5">
+                    <action-button />
+                </div>
             </div>
         </div>
     </header>
 </template>
 
 <script>
+    import ActionButton from './ActionButton.vue';
 export default {
     name: "MainNav",
+    components: {
+        ActionButton
+    },
     data() {
         return {
             company: "Job Career",
