@@ -1,5 +1,5 @@
 <template>
-    <header class="w-full text-sm">
+    <header :class="['w-full', 'text-sm', headerHeightClass]">
         <div class="fixed top-0 left-0 h-16 w-full">
             <div class="flex h-full flex-nowrap border-b border-solid border-brand-gray-1 mx-auto px-8">
                 <a :href="url" class="flex h-full items-center text-xl">{{ company }}</a>
@@ -18,19 +18,22 @@
             <the-sub-nav v-if="isLoggedIn" />
         </div>
     </header>
+    <the-hero />
 </template>
 
 <script>
-import ActionButton from './ActionButton.vue';
-import ProfileImage from './ProfileImage.vue';
-import TheSubNav from './TheSubNav.vue'; 
+import ActionButton from '../Shared/ActionButton.vue';
+import ProfileImage from '../Navigation/ProfileImage.vue';
+import TheHero from '../JobSearch/TheHero.vue';
+import TheSubNav from '../Navigation/TheSubNav.vue'; 
 
 export default {
     name: "MainNav",
     components: {
         ActionButton,
         ProfileImage,
-        TheSubNav
+        TheSubNav,
+        TheHero
     },
     data() {
         return {
@@ -45,6 +48,14 @@ export default {
                 "Jobs"
             ],
             isLoggedIn: false,
+        }
+    },
+    computed: {
+        headerHeightClass() {
+            return {
+                "h-16": !this.isLoggedIn,
+                "h-32": this.isLoggedIn
+            }
         }
     },
      methods: {

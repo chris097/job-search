@@ -1,5 +1,5 @@
 import { screen, render, getByText } from "@testing-library/vue";
-import TheSubNav from "@/components/TheSubNav.vue";
+import TheSubNav from "@/components/Navigation/TheSubNav.vue";
 
 describe("TheSubNav", () => {
     describe("when is on the jobs page", () => {
